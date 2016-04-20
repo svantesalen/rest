@@ -21,11 +21,12 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>9.2.3.v20140905</version>
-		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.eclipse.jetty</groupId> -->
+		<!-- <artifactId>jetty-server</artifactId> -->
+		<!-- <version>9.2.3.v20140905</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
@@ -34,22 +35,34 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>9.3.9.M0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>2.22.2</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet-core</artifactId>
 			<version>2.22.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+			<version>2.22.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.moxy</artifactId>
+			<version>2.6.3-M1</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.eclipse.jetty</groupId> -->
+		<!-- <artifactId>jetty-server</artifactId> -->
+		<!-- <version>9.3.9.M0</version> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.glassfish.jersey.core</groupId> -->
+		<!-- <artifactId>jersey-server</artifactId> -->
+		<!-- <version>2.22.2</version> -->
+		<!-- </dependency> -->
 
 		<!-- Beware as some rest examples will make you add a maven dependency 
 			to jersey-container-jetty-http, which includes a likely older version of 
@@ -57,11 +70,7 @@
 			in your pom file. <dependency> <groupId>org.glassfish.jersey.containers</groupId> 
 			<artifactId>jersey-container-jetty-http</artifactId> <version>2.22.2</version> 
 			</dependency> -->
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-moxy</artifactId>
-			<version>2.22.2</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>

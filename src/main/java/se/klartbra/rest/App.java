@@ -7,19 +7,24 @@ import org.eclipse.jetty.servlet.ServletHolder;
 public class App {
     public static void main(String[] args) throws Exception {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
- 
+        context.setContextPath("/provisioning");
+//        context.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true");
+
+        
         Server jettyServer = new Server(8080);
         jettyServer.setHandler(context);
  
         ServletHolder jerseyServlet = context.addServlet(
              org.glassfish.jersey.servlet.ServletContainer.class, "/*");
         jerseyServlet.setInitOrder(0);
+        
  
         // Tells the Jersey Servlet which REST service/class to load.
         jerseyServlet.setInitParameter(
            "jersey.config.server.provider.classnames",
            EntryPoint.class.getCanonicalName());
+//        jerseyServlet.setInitParameter("jersey.config.server.provider.classnames",
+//                "org.glassfish.jersey.moxy.json.MoxyJsonFeature");
  
         try {
             jettyServer.start();
