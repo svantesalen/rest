@@ -1,13 +1,14 @@
-package se.klartbra.rest;
+package se.klartbra.model;
 
-public class ProfileData {
+
+public class ProfileContents  {
 	String port;
 	String vlan1;
 	String vlan2;
 	String speedUp;
 	String speedDown;
-	
-	public ProfileData() {}
+
+	public ProfileContents()  {}
 
 	public String getPort() {
 		return port;
@@ -52,6 +53,16 @@ public class ProfileData {
 	@Override
 	public String toString() {
 		return port+", "+vlan1+", "+vlan2+", "+speedDown+", "+speedUp;
+	}
+
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
