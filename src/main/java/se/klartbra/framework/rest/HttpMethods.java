@@ -9,19 +9,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import se.klartbra.model.hwProfiles.Profile;
+import se.klartbra.model.hwProfiles.ProfilesForPlatform;
+import se.klartbra.model.hwProfiles.ProfilesPerPlatform;
+
 public interface HttpMethods {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public DtoHashMapStringString get();
+	public ProfilesPerPlatform get();
 
 	@GET
-	@Path("{resource}")
+	@Path("{platform}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public DtoHashMapStringString get(@PathParam("resource") String resource);
+	public ProfilesForPlatform get(@PathParam("platform") String platform);
 
 	@PUT
 	@Path("/put")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response put(DtoHashMapStringString data);
+	public Response put(Profile profile);
 
 }

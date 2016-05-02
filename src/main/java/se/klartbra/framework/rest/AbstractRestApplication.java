@@ -17,14 +17,21 @@ public abstract class AbstractRestApplication {
         
         Server jettyServer = new Server(port);
         jettyServer.setHandler(context);
- 
+//        <init-param>
+//        <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+//        <param-value>true</param-value>
+//    </init-param>
         ServletHolder jerseyServlet = context.addServlet(
              org.glassfish.jersey.servlet.ServletContainer.class, "/*");
         jerseyServlet.setInitOrder(0);
+        
         // Tells the Jersey Servlet which REST service/class to load.
         jerseyServlet.setInitParameter(
-           "jersey.config.server.provider.classnames",
-           applicationClassCanonicalName);
+                "jersey.config.server.provider.classnames",
+                applicationClassCanonicalName);
+//        jerseyServlet.setInitParameter(
+//                "com.sun.jersey.api.json.POJOMappingFeature",
+//                "true");
 //           theApplication.getClass().getCanonicalName()); 
         try {
             jettyServer.start();
